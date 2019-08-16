@@ -5,7 +5,7 @@ ENV MIRRORS=https://mirrors.tuna.tsinghua.edu.cn/alpine \
     TZ=Asia/Shanghai
 
 ENV MAJOR_VERSION=3.5 \
-    MINOR_VERSION=0
+    MINOR_VERSION=1
 
 RUN apk add --no-cache ca-certificates tzdata && ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
@@ -26,4 +26,4 @@ COPY --from=builder /alpine-minirootfs /
 
 CMD ["/bin/sh"]
 
-# docker build . --no-cache -t nediiii/alpine:3.5 -t nediiii/alpine:3.5.0
+# docker build . --no-cache -t nediiii/alpine:3.5 -t nediiii/alpine:3.5.1
