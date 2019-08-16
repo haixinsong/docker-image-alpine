@@ -94,7 +94,7 @@ update_version() {
         sed -i "/docker build . --no-cache/c\# docker build . --no-cache -t $DOCKER_USERNAME\/$DOCKER_REPONAME:${MAJOR_VERSION} -t $DOCKER_USERNAME\/$DOCKER_REPONAME:$i" Dockerfile # update comment line in the bottom
         if [[ -z $(cat README.md | grep ${MAJOR_VERSION}) ]]; then
           # add a new line after line 9
-          sed -i "9a - [${MAJOR_VERSION}.${MINOR_VERSION}, ${MAJOR_VERSION}](https://github.com/$GIT_USERNAME/$GIT_REPONAME/blob/v${MAJOR_VERSION}.${MINOR_VERSION}/Dockerfile)" README.md
+          sed -i "11a - [${MAJOR_VERSION}.${MINOR_VERSION}, ${MAJOR_VERSION}](https://github.com/$GIT_USERNAME/$GIT_REPONAME/blob/v${MAJOR_VERSION}.${MINOR_VERSION}/Dockerfile)" README.md
         else
           sed -i "/${MAJOR_VERSION}/c- [${MAJOR_VERSION}.${MINOR_VERSION}, ${MAJOR_VERSION}](https://github.com/$GIT_USERNAME/$GIT_REPONAME/blob/${MAJOR_VERSION}.${MINOR_VERSION}/Dockerfile)" README.md
         fi
