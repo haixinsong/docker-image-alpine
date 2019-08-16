@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+# IMAGE_NAME: the name and tag of the Docker repository being built. (This variable is a combination of DOCKER_REPO:DOCKER_TAG.)
+
+# my setting match the tag for auto build. match /^v([0-9.]+)$/
+# so $DOCKER_TAG is x.x.x ; eg: 3.5.0
+
+# mainVersionTag is x.x ; eg: 3.5
+mainVersionTag=$(echo $DOCKER_TAG | grep -Eo '^([0-9]+\.[0-9]+)')
+
+# Tag and push image for each additional tag
+for tag in {$mainVersionTag,latest}; do
+  docker tag $IMAGE_NAME ${DOCKER_REPO}:${tag}
+  docker push ${DOCKER_REPO}:${tag}
+done

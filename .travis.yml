@@ -1,0 +1,16 @@
+dist: bionic
+language: bash
+branches:
+  only:
+    - master
+script:
+  - bash ".travis/version-update.sh"
+notifications:
+  email:
+    recipients:
+      - nediiii@outlook.com
+    on_success: always
+    on_failure: always
+env:
+  global:
+    secure: jSAGH2vknIC9r54f581yDMxalTSuXTmH0UgN0gw4lkkqyY5SDoCj3NZcakdi8mMjlleeTFXjL3YG/9RDQvS0+D+BBzWaJos3xzdUvtWO5KlVCcAJnzSIn085vtF7TwNXaUsxgt+W2U0VobRGN4ROtd30UF+ugMKzEiMvDsvucrL01RLgioEc392M19eyNlpHrVP81+Dye9A/CdGWiMAs5geTlPs82wqdqCHCvLXqFVSZ8ht7VW0gITmxzP96T8Tl4puThHGbkhyeba7w3HZ+e5Kc8BFhW5kj5YfbIiG0MfRYF2NcggvkbpvAOXMGHqxHM1BtkCKv73k3s6/1njse44fzHR64J/nJUycoPGhe1QmUaqFZ73eGHhzdnbZqCFdQgH2MrJBPJsaaGTKOSOO29M3ZdUKKH0HNww+RwDnokv1SHyZyHUABPUZLx95Qcb8+avRVZwyYOs/A3AyTzkyTNLHgCkPMNEGujhF/9J8/OAOnRe5NnTc9avuhPa4jqB+dsnyBHLfYPkgEhikQ9vVPhr3DuQQ6647zFCq/uUMONnMriiD8lMwR5yQy2lnMiKRxdqqN959AR7yJsVi5UYN1em6LD2JDY1QlqC49FhDOBj+MuBwSY5kjJBm0ryznv5CCTE+DyvylWld1YS0xs1q5Kw3Q5WKsuft4XVlaY3KeNjM=
