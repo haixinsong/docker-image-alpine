@@ -9,6 +9,7 @@
 
 ## Supported tags and respective Dockerfile links
 
+- [3.9.0, 3.9](https://github.com/nediiii/docker-image-alpine/blob/v3.9.0/Dockerfile)
 - [3.8.2, 3.8](https://github.com/nediiii/docker-image-alpine/blob/3.8.2/Dockerfile)
 - [3.7.0, 3.7](https://github.com/nediiii/docker-image-alpine/blob/v3.7.0/Dockerfile)
 - [3.6.2, 3.6](https://github.com/nediiii/docker-image-alpine/blob/3.6.2/Dockerfile)
