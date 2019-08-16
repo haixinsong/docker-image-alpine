@@ -1,5 +1,7 @@
 # Alpine-linux image for mainland China
 
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/nediiii/alpine)](https://hub.docker.com/r/nediiii/alpine)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nediiii/alpine)](https://hub.docker.com/r/nediiii/alpine)
 [![Docker Stars](https://img.shields.io/docker/stars/nediiii/alpine)](https://hub.docker.com/r/nediiii/alpine)
 [![Docker Pulls](https://img.shields.io/docker/pulls/nediiii/alpine)](https://hub.docker.com/r/nediiii/alpine)
 [![GitHub last commit](https://img.shields.io/github/last-commit/nediiii/docker-image-alpine)](https://github.com/nediiii/docker-image-alpine/commits/master)

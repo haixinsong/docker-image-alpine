@@ -50,14 +50,19 @@ setup_git() {
 # prevent multi tag commit in a short period,
 # like push more than 10 tags in an hour
 avoid_rapid_tag() {
-  LATEST_TAG_NAME=`git describe --abbrev=0`
-  LATEST_COMMIT_TIME_IN_SECONDS=`git log -1 --format=%at $LATEST_TAG_NAME`
-  NOW_TIME_IN_SECONDS=`date +%s`
-  THREE_HOURS_AFTER_TAG_IN_SECONDS=$((LATEST_COMMIT_TIME_IN_SECONDS + 3*60*60))
-  if [[ -z $LATEST_TAG_NAME ]] || [[ NOW_TIME_IN_SECONDS -lt THREE_HOURS_AFTER_TAG_IN_SECONDS ]]; then
-    timelog "prevent multi tag commit in a short period, this build is aborted"
-    exit 0
+  LATEST_TAG_NAME=$(git describe --abbrev=0)
+  if [[ -n $LATEST_TAG_NAME ]]; then
+    # already has a tag
+    # then check the tag commit time
+    LATEST_COMMIT_TIME_IN_SECONDS=$(git log -1 --format=%at $LATEST_TAG_NAME)
+    NOW_TIME_IN_SECONDS=$(date +%s)
+    THREE_HOURS_AFTER_TAG_IN_SECONDS=$((LATEST_COMMIT_TIME_IN_SECONDS + 3 * 60 * 60))
+    if [[ NOW_TIME_IN_SECONDS -lt THREE_HOURS_AFTER_TAG_IN_SECONDS ]]; then
+      timelog "prevent multi tag commit in a short period, this build is aborted"
+      exit 0
+    fi
   fi
+  timelog "not tag yet, ready to build"
 }
 
 push_to_github() {
