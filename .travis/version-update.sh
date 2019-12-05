@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-MIRRORS=https://mirrors.tuna.tsinghua.edu.cn/alpine
 GIT_USERNAME=nediiii
 GIT_USEREMAIL=varnediiii@gmail.com
 GIT_REPONAME=docker-image-alpine

@@ -1,13 +1,14 @@
 FROM alpine as builder
 
-ENV MIRRORS=https://mirrors.tuna.tsinghua.edu.cn/alpine \
+ENV MIRRORS=https://mirrors.aliyun.com/alpine \
     ARCH=x86_64 \
     TZ=Asia/Shanghai
 
 ENV MAJOR_VERSION=3.10 \
     MINOR_VERSION=3
 
-RUN apk add --no-cache ca-certificates tzdata && ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
+RUN sed -i "s#http://dl-cdn.alpinelinux.org/alpine#${MIRRORS}#g" /etc/apk/repositories && \
+    apk add --no-cache ca-certificates tzdata && ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
 RUN wget ${MIRRORS}/v${MAJOR_VERSION}/releases/${ARCH}/alpine-minirootfs-${MAJOR_VERSION}.${MINOR_VERSION}-${ARCH}.tar.gz && \
     mkdir alpine-minirootfs && \
