@@ -4,7 +4,7 @@ ENV MIRRORS=https://mirrors.aliyun.com/alpine \
     ARCH=x86_64 \
     TZ=Asia/Shanghai
 
-ENV MAJOR_VERSION=3.11 \
+ENV MAJOR_VERSION=3.9 \
     MINOR_VERSION=6
 
 RUN sed -i "s#http://dl-cdn.alpinelinux.org/alpine#${MIRRORS}#g" /etc/apk/repositories && \
@@ -27,4 +27,4 @@ COPY --from=builder /alpine-minirootfs /
 
 CMD ["/bin/sh"]
 
-# docker build . --no-cache -t nediiii/alpine:3.11 -t nediiii/alpine:3.11.6
+# docker build . --no-cache -t nediiii/alpine:3.9 -t nediiii/alpine:3.9.6
