@@ -12,7 +12,7 @@
 - [3.13.3, 3.13](https://github.com/nediiii/docker-image-alpine/blob/3.13.3/Dockerfile)
 - [3.12.3, 3.12](https://github.com/nediiii/docker-image-alpine/blob/3.12.3/Dockerfile)
 - [3.11.7, 3.11](https://github.com/nediiii/docker-image-alpine/blob/3.11.7/Dockerfile)
-- [3.10.7, 3.10](https://github.com/nediiii/docker-image-alpine/blob/3.10.7/Dockerfile)
+- [3.10.8, 3.10](https://github.com/nediiii/docker-image-alpine/blob/3.10.8/Dockerfile)
 - [3.9.6, 3.9](https://github.com/nediiii/docker-image-alpine/blob/3.9.6/Dockerfile)
 - [3.8.2, 3.8](https://github.com/nediiii/docker-image-alpine/blob/3.8.2/Dockerfile)
 - [3.7.0, 3.7](https://github.com/nediiii/docker-image-alpine/blob/v3.7.0/Dockerfile)
